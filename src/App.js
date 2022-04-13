@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <p> Amit Test  </p>
+        <p> Amit Test 12 </p>
         <p> prath test </p>
       </header>
     </div>
