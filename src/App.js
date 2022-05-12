@@ -1,27 +1,49 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p> Amit Test 12 </p>
-        <p> prath test </p>
-      </header>
-    </div>
-  );
+function formatName(user){
+  return user.firstName + " " + user.lastName;
 }
+const user = {
+  firstName: 'Amit',
+  lastName: "Vasant"
+}
+function getGreeting(user){
+  if (user){
+    return <h1> Hello {user.firstName + ' ' + user.lastName}</h1>
+  }
+  else{
+    return <h1> Hello Stranger !</h1>
+  }
+
+}
+
+
+let interval = null;
+function App() {
+  const [time,setTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(()=>{
+    interval = setInterval(()=>{
+      setTime(new Date().toLocaleTimeString());
+    })
+    return () =>{
+      if(interval){
+        clearInterval(interval);
+      }
+    }
+  },[])
+
+  const element = () => (
+    <div>
+        <h1> hello world</h1>
+        <p> It is {time}  </p>
+        
+      </div>  );
+      
+  return (
+    element()
+  );
+}  
 
 export default App;

@@ -3,9 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AmitView from './Components/AmitView';
+import AmitListView from './Components/AmitListView';
+import WeatherView from './Components/Weather/WeatherView';
 
+const posts = 
+[
+  {id:100, title:"hello world", content:"welcome to hello"},
+  {id:200, title:"installation", content:"you can install from npm"},
+]
 ReactDOM.render(
   <React.StrictMode>
+    <WeatherView />
+    <hr/>
+    <AmitListView posts={posts} />
+    <AmitView />
+    <hr/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
