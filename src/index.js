@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import AmitView from './Components/AmitView';
 import AmitListView from './Components/AmitListView';
 import WeatherView from './Components/Weather/WeatherView';
+import RtGridView from './Components/RtGridView';
 
 const posts = 
 [
@@ -14,12 +15,14 @@ const posts =
 ]
 ReactDOM.render(
   <React.StrictMode>
-    <WeatherView />
+    <RtGridView />
+
+    {/* <WeatherView />
     <hr/>
-    <AmitListView posts={posts} />
-    <AmitView />
+    <AmitListView posts={posts} /> */}
+    {/* <AmitView />
     <hr/>
-    <App />
+    <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
